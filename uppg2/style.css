@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #78000a;
+	margin: 0 auto;
+	font-family: Helvetica, arial;
+	font-size: 16px;
+	max-width: 1000px;
+}
+nav {
+	background-color: #fff;
+	/*width: 80%;*/
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: 0 auto;
+	z-index: 2;
+	max-width: 1000px;
+}
+a.menu {
+	margin-left: 40px;
+	text-decoration: none;
+	color: grey;
+	font-weight: bold;
+}
+a.menu:hover {
+	margin-left: 40px;
+	text-decoration: none;
+	color: #2a2a2a;
+}
+a.menu:active {
+	text-decoration: none;
+}
+.logo {
+	float: left;
+	margin: 5px 5px 5px 5px;
+	text-decoration: none;
+}
+.menu {
+	float: right;
+	margin: 5px 5px 5px 5px;
+	display: flex;
+}
+.mobiNav {
+	display: none;
+}
+section {
+	background-color: #fff;
+}
+section img {
+	width: 100%;
+	margin-top: -6%;
+}
+section.meny{
+	padding-top: 60px;
+	padding-bottom: 20px;
+	background-color: #fff;
+}
+h1 {
+	font-size: 50px;
+	color: #78000a;
+	font-family: "Damion";
+}
+article {
+	background-color: #fff;
+}
+article.kontakt {
+	background-color: #fff;
+	height: 550px;
+	padding: 40px 40px 40px 40px;
+}
+ul {
+	list-style-type: none;
+}
+article.kontakt ul {
+	float: left;
+}
+.map {
+	float: right;
+}
+footer {
+	background-color: white;
+}
+footer ul {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	list-style-type: none;
+}
+.parallax {
+	background-image: url(img/pizzaWOW.jpeg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: contain;
+	height: 10%;
+}
+/*RESIZING*/
+
+@media only screen and (max-width: 600px) {
+	.menu {
+		display: none;
+	}
+	.map {
+		float: none;
+	}
+	article.kontakt ul {
+		float: none;
+	}
+	.mobiNav {
+		max-width: 480px;
+		margin: auto;
+		background-color: #fff;
+		color: #000;
+		display: block;
+	}
+	.mobileMenu {
+		overflow: hidden;
+		background-color: #fff;
+		position: relative;
+	}
+	.mobileMenu #myLinks {
+		display: none;
+	}
+	.mobileMenu a {
+		color: black;
+		text-decoration: none;
+		font-size: 17px;
+		display: block;
+		height: 40px;
+		width: 40px;
+	}
+	.mobileMenu a.icon {
+		background: black;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.mobileMenu a:hover {
+		color: darkred;
+	}
+	.active {
+		color: white;
+	}
+}
