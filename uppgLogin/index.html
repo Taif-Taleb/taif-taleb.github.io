@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="author">
+  <title>KAROKEO</title><!-- Bootstrap core CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!--Login script-->
+  <script type="text/javascript" src="assets/vendor/bootstrap/js/login.js"></script>
+  <link rel="icon" type="image/png" href="assets/img/fav.png" />
+</head>
+<body>
+  <!-- /#sidebar-wrapper -->
+  <div id="page-content-wrapper">
+    <!-- Top Menu-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <img alt="karaokeo logo" class="nav-logo" src="assets/img/loggo.png"> 
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">HOME<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">ROOMS<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FRIENDS</a>
+          </li>
+          <!--Login menu-->
+          <li>
+              <div class="login-container" id="loginCnt">
+                <input type="username" placeholder="Username" name="username" id="username">
+                <input type="password" placeholder="Password" name="psw" id="password">
+                <button type="submit" name="" value="Login" onclick="validate()" id="loginBtn">Login</button>
+              </div>
+          </li>
+          <!--Drop menu for logged in users-->
+          <div class="loggedIn" id="loggedIn">
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+              <p id="LoggedInUsername"></p> <!--username-->
+              <img alt="profile icon" src="assets/img/profile-icon.png"> <!--user profile image-->
+            </a>
+          <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">View Profile</a> 
+              <a class="dropdown-item" href="privacy.html">Privacy Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Log Out</a>
+            </div>
+          </li>
+          </div>
+        </ul>
+      </div>
+      <!-- End of Menu Options-->
+    </nav>
+    <!-- Main content Wrapper -->
+    <div class="d-flex" id="wrapper">
+      <!-- Side bar menu/Filter -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <ul>
+          <li>
+            <div class="input-group mb-3">
+              <input aria-describedby="button-addon2" aria-label="Recipient's username" class="form-control" placeholder="Search" type="text">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" id="button-addon2" type="button">GO</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- Filter -->
+        <ul>
+          <li style="list-style: none"><strong>Filter options:</strong></li>
+          <li><label class="my-1 mr-2" for="inlineFormCustomSelectPref">Genre</label> <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>
+              Any
+            </option>
+            <option value="1">
+              Metal
+            </option>
+            <option value="2">
+              Doom Metal
+            </option>
+            <option value="3">
+              Brutal Technical Death Metal
+            </option>
+          </select></li>
+          <li><label class="my-1 mr-2" for="inlineFormCustomSelectPref">Sub Genre</label> <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>
+              Any
+            </option>
+            <option value="1">
+              One
+            </option>
+            <option value="2">
+              Two
+            </option>
+            <option value="3">
+              Three
+            </option>
+          </select></li>
+          <li><label class="my-1 mr-2" for="inlineFormCustomSelectPref">Country</label> <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option selected>
+              Any
+            </option>
+            <option value="1">
+              Denmark
+            </option>
+            <option value="2">
+              Norway
+            </option>
+            <option value="3">
+              Sweden
+            </option>
+          </select></li>
+          <li>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Choose one</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1"> <label class="form-check-label" for="inlineCheckbox1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2"> <label class="form-check-label" for="inlineCheckbox2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2"> <label class="form-check-label" for="inlineCheckbox2">3</label>
+            </div>
+          </li>
+          <li>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Full Rooms</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" id="inlineRadio1" name="inlineRadioOptions" type="radio" value="option1"> <label class="form-check-label" for="inlineRadio1">Show</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" id="inlineRadio2" name="inlineRadioOptions" type="radio" value="option2"> <label class="form-check-label" for="inlineRadio2">Hide</label>
+            </div>
+          </li>
+          </ul>
+          <div class="btnContainer">
+            <button class="btn btn-secondary btn-block" type="button">Apply Filter</button>
+            <div class="btn-group btn-group-toggle btn-block">
+              <label class="btn btn-success"><input checked id="option1" name="options" type="radio"> Quick Join</label> <label class="btn btn-primary"><input id="option2" name="options" type="radio"> Create Room</label>
+            </div>
+          </div>
+      </div>
+      <!-- End Filter -->
+      <!-- Side bar menu/filter Toggle Button -->
+      <div class="HideBtnContainer">
+        <button class="HideBtn" id="side-toggle"><p class="filter">FILTER</p></button>
+      </div>
+      <!--Room Cards-->
+      <div class="container-fluid">
+        <div class="card-deck">
+          <!--Room Card-->
+          <div class="card" id="roomCard">
+            <img alt="..." class="card-img-top" src="assets/img/room/1.jpg"> <!--Room image-->
+            <div class="card-body">
+              <h5 class="card-title">90s Pop hits</h5> <!--Room Name-->
+              <p class="card-text">The biggest and greatest Pop songs from the 90s. Nothing else needed!</p> <!--Room Description-->
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 5/10</small> <!--Participants-->
+              <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button> <!--join room button-->
+            </div>
+          </div>
+          <!--End Of first Room Card-->
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/2.jpg">
+            <div class="card-body">
+              <h5 class="card-title">HipityHopity</h5>
+              <p class="card-text">Lots of hiphop songs to sing along to. Come sing with us!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 9/10</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/3.jpg">
+            <div class="card-body">
+              <h5 class="card-title">BOLLYDOLLY</h5>
+              <p class="card-text">A sweet selection of Indian and Bollywood songs, all in indian..</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 7/10</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/4.jpg">
+            <div class="card-body">
+              <h5 class="card-title">Blackened Extreme DeathTech Folk Songs</h5>
+              <p class="card-text">Prepare your throats.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 0/10</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/2.jpg">
+            <div class="card-body">
+              <h5 class="card-title">HipityHopity</h5>
+              <p class="card-text">Lots of hiphop songs to sing along to. Come sing with us!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 9/10</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/4.jpg">
+            <div class="card-body">
+              <h5 class="card-title">8-Bit</h5>
+              <p class="card-text">Prepare your throats. Sing in 8-Bit! Like, share and subscribe!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 10/10</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/1.jpg">
+            <div class="card-body">
+              <h5 class="card-title">90s Pop hits</h5>
+              <p class="card-text">The biggest and greatest Pop songs from the 90s. Nothing else needed!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 5/10</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <div class="card">
+            <img alt="..." class="card-img-top" src="assets/img/room/3.jpg">
+            <div class="card-body">
+              <h5 class="card-title">BOLLYDOLLY</h5>
+              <p class="card-text">A sweet selection of Indian and Bollywood songs, all in indian..</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Participant: 4/20</small> <button class="btn btn-primary btn-sm btn-block" type="button">Join Room</button>
+            </div>
+          </div>
+          <!--End of Room cards-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Friendslist menu-->
+<div class="btn-group dropup" data-toggle="tooltip" title="Friends" id="friends">
+  <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="Btn">
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-people-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+    </svg>
+  </button>
+  <div class="dropdown-menu">
+    <!-- friends menu links -->
+    <div class="friends-title">
+      <h5>Online Friends</h5>
+    </div>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">
+        <img class="friends-icon" src="assets/img/profile-icon.png" alt="">
+        Michael Jelicic
+      </a>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">
+        <img class="friends-icon" src="assets/img/profile-icon.png" alt="">
+        Taif Abu Taleb
+      </a>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">
+        <img class="friends-icon" src="assets/img/profile-icon.png" alt="">
+        Gabriella Heller
+      </a>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">
+        <img class="friends-icon" src="assets/img/profile-icon.png" alt="">
+        Marcus Johansson
+      </a>
+    <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">
+        <img class="friends-icon" src="assets/img/profile-icon.png" alt="">
+        Mikael Phan Hien
+      </a>
+    <div class="dropdown-divider"></div>
+            
+  </div>
+</div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="assets/vendor/jquery/jquery.min.js">
+  </script> 
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js">
+  </script> 
+  <!-- Side Content Toggle Script -->
+  <script>
+     $("#side-toggle").click(function(e) {
+       e.preventDefault();
+       $("#wrapper").toggleClass("toggled");
+     });
+  </script>
+</body>
+</html>

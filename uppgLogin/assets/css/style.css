@@ -1,0 +1,263 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+    overflow-x: hidden;
+    padding-top: 62px;
+ }
+
+#sidebar-wrapper {
+  min-height: 90vh;
+  margin-left: -22em;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  max-width: 350px;
+  min-width: 350px;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+/*.fixed {
+  position: fixed;
+}*/
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.bg-light {
+    background-color: #adb5bd;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+/*Filter*/
+#sidebar-wrapper ul {
+  list-style-type: none;
+  margin-left: -30px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#sidebar-wrapper li {
+  /*border-bottom: solid;*/
+  border-width: 1px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  border-color: lightgrey;
+}
+p.filter {
+  writing-mode: vertical-rl; 
+  margin-left: -2px;
+  margin-right: -2px;
+  padding-top: 16px;
+}
+
+/*End Filter*/
+
+/*Top Nav*/
+.navbar {
+  width: 100%;
+}
+a.nav-link {
+  color: blue;
+}
+
+.nav-logo{
+  width: 150px;
+}
+.nav-link {
+  border-radius: 1px;
+  margin-left: 1em;
+}
+a.menu-icon img {
+  height: 30px;
+  margin-left: 1em;
+  margin-top: 6px;
+}
+
+a.nav-link img {
+  height: 30px;
+  margin-left: 1em;
+}
+
+/*Login style*/
+.topnav .login-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background: #ccc;
+}
+
+#LoggedInUsername {
+  float: right;
+  text-align: center;
+  padding-right: 16px;
+  font-size: 15px;
+}
+
+.loggedIn {
+  display: none;
+}
+
+/*End Top Nav*/
+
+
+/*room cards*/
+.card {
+  max-width: 340px;
+  min-width: 340px;
+  margin-top: 20px;
+}
+
+.card img {
+  min-height: 220px;
+  max-height: 220px;
+}
+/*End Room cards*/
+
+
+.HideBtn {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 2px;
+  border-radius: 5px;
+}
+
+.HideBtnContainer {
+  /*margin-right: -10px;*/
+  display: none;
+}
+
+.btnContainer {
+  top: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -22rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .HideBtnContainer {
+  display: block;
+  }
+  .card img {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .HideBtnContainer {
+  display: block;
+  }
+  .card {
+    max-width: 320px;
+    min-width: 320px;
+    margin-top: 20px;
+  }
+  .card img {
+    min-height: 80px;
+    max-height: 80px;
+  }
+}
+
+
+
+
+
+/*Friends list*/
+#friends {
+  position: fixed; 
+  right: 15px; 
+  bottom: 15px;
+  display: -ms-inline-flexbox;
+  z-index: 1;
+}
+
+#Btn {
+  padding: 10px;
+  box-shadow: 0px 0px 10px 0px #888888;
+}
+
+.btn-group-vertical {
+  position: fixed; 
+  right: 15px; 
+  bottom: 15px;
+  display: -ms-inline-flexbox;
+  z-index: 1;
+}
+.dropdown-toggle{
+  border-radius: 40px;
+}
+.dropdown-menu{
+  min-width: 12em;
+  padding: 0;
+  box-shadow: 0px 0px 20px 0px #888888;
+}
+.btn-friendslist {
+width: 100%;
+/*background-color: #007bff;*/
+height: 45px;
+/*display: -webkit-box;*/
+
+}
+.btn-friendslist:hover {
+  background-color: lightgrey;
+}
+.friends-icon{
+  width: 20px;
+}
+.friends-title{
+  text-align: center;
+}
+/*End of Friendslist*/
+
+
+
+
