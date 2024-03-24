@@ -13,7 +13,7 @@ function nextSequence() {
     console.log(randomChosenColour);
     gamePattern.push(randomChosenColour);
     $("#"+randomChosenColour).fadeOut("fast").fadeIn("fast");
-    var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+    var audio = new Audio(randomChosenColour + ".mp3");
     audio.play();
     level++;
     $("h1").text("Level " + level);
@@ -24,7 +24,7 @@ $(".btn").click(function(){
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
     //$(this).fadeOut("fast").fadeIn("fast");
-    var audio = new Audio("sounds/" + userChosenColour + ".mp3");
+    var audio = new Audio(userChosenColour + ".mp3");
     audio.play();
     animatePress($(this).attr("id"));
 
@@ -62,7 +62,7 @@ function checkAnswer(currentLevel) {
               highscore(level);
             }
           } else {
-            var audio = new Audio("sounds/wrong.mp3");
+            var audio = new Audio(wrong.mp3");
             audio.play();
             $("h1").html("Game over!<br>Press any key to start over");
             $("body").addClass("game-over");
