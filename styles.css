@@ -38,28 +38,24 @@ body {
   border: 10px solid green;
   background-color: #FEF2BF;
   box-shadow: 0 0 20px green;
-  transition: all 0.2s;
 }
 
 .yellow:active {
   border: 10px solid yellow;
   background-color: #FEF2BF;
   box-shadow: 0 0 20px yellow;
-  transition: all 0.2s;
 }
 
 .red:active {
   border: 10px solid red;
   background-color: #FEF2BF;
   box-shadow: 0 0 20px red;
-  transition: all 0.2s;
 }
 
 .blue:active {
   border: 10px solid blue;
   background-color: #FEF2BF;
   box-shadow: 0 0 20px blue;
-  transition: all 0.2s;
 }
 
 .game-over { 
