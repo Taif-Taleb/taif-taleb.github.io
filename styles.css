@@ -58,10 +58,12 @@ body {
   background-color: yellow;
 }
 
+/* Removed js animation and replace with pure css for better performance!!
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+*/
 
 #startButton {
   margin-top: 46px;

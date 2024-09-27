@@ -26,7 +26,7 @@ $(".btn").click(function(){
     //$(this).fadeOut("fast").fadeIn("fast");
     var audio = new Audio("sounds/" + userChosenColour + ".mp3");
     audio.play();
-    animatePress($(this).attr("id"));
+  //  animatePress($(this).attr("id"));
 
     checkAnswer(userClickedPattern.length-1);
 });
@@ -41,6 +41,7 @@ function animatePress(currentColour){
 $(document).keypress(function() {
     if(!started){
         nextSequence();
+       // $(".btn").removeClass("hide");
         started = true;
         $("#startButton").fadeOut(10);
     }
@@ -70,6 +71,7 @@ function checkAnswer(currentLevel) {
             setTimeout(function () {
                 $("body").removeClass("game-over");
             }, 200);
+        //    $(".btn").addClass("hide");
             $("#startButton").fadeIn(10);
             startOver();
           }
