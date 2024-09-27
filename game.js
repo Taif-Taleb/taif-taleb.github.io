@@ -4,6 +4,7 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var level = 0;
 var started = false;
 var highscoreNumber = 0;
+var audioIsOn = true;
 
 function nextSequence() {
     userClickedPattern = [];
@@ -13,8 +14,11 @@ function nextSequence() {
     console.log(randomChosenColour);
     gamePattern.push(randomChosenColour);
     $("#"+randomChosenColour).fadeOut("fast").fadeIn("fast");
-    var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
-    audio.play();
+
+    if(audioIsOn){
+        var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+        audio.play();
+    }
     level++;
     $("h1").text("Level " + level);
     
@@ -24,9 +28,11 @@ $(".btn").click(function(){
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
     //$(this).fadeOut("fast").fadeIn("fast");
-    var audio = new Audio("sounds/" + userChosenColour + ".mp3");
+    if(audioIsOn){
+        var audio = new Audio("sounds/" + userChosenColour + ".mp3");
     audio.play();
-  //  animatePress($(this).attr("id"));
+    }
+    animatePress($(this).attr("id"));
 
     checkAnswer(userClickedPattern.length-1);
 });
@@ -41,17 +47,28 @@ function animatePress(currentColour){
 $(document).keypress(function() {
     if(!started){
         nextSequence();
-       // $(".btn").removeClass("hide");
         started = true;
-        $("#startButton").fadeOut(10);
+        $(".startButtonContainer").fadeOut(10);
     }
 });
 
 $("#startButton").click(function(){
+
+    var audioToggle = document.getElementById("audio-controll").checked;
+    if(audioToggle){
+        audioIsOn = true;
+    } else {
+        audioIsOn = false;
+    }
+    //audioIsOn = audioSetting;
+
     if(!started){
-        nextSequence();
         started = true;
-        $("#startButton").fadeOut(10);
+        $(".row-container").removeClass("hide");
+        setTimeout(function () {
+            nextSequence();
+        }, 500);
+        $(".startButtonContainer").fadeOut(10);
     }
 });
 
@@ -64,15 +81,17 @@ function checkAnswer(currentLevel) {
               highscore(level);
             }
           } else {
-            var audio = new Audio("sounds/wrong.mp3");
-            audio.play();
+            if(audioIsOn){
+                var audio = new Audio("sounds/wrong.mp3");
+                audio.play();
+            }
             $("h1").html("Game over!<br>Press any key to start over");
             $("body").addClass("game-over");
             setTimeout(function () {
                 $("body").removeClass("game-over");
             }, 200);
-        //    $(".btn").addClass("hide");
-            $("#startButton").fadeIn(10);
+            $(".row-container").addClass("hide");
+            $(".startButtonContainer").fadeIn(10);
             startOver();
           }
 }
