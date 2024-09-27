@@ -33,6 +33,10 @@ body {
   border-radius: 20%;
 }
 
+.btn:active {
+  border: 10px solid white;
+}
+
 .game-over {
   background-color: red;
   opacity: 0.8;
