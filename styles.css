@@ -27,17 +27,42 @@ body {
 .btn {
   margin: 25px;
   display: inline-block;
-  height: 15rem;
   width: 15rem;
+  height: 15rem;
   border: 10px solid black;
   border-radius: 20%;
+  
 }
 
-.btn:active {
-  border: 10px solid white;
+.green:active {
+  border: 10px solid green;
+  background-color: #FEF2BF;
+  box-shadow: 0 0 20px green;
+  transition: all 0.2s;
 }
 
-.game-over {
+.yellow:active {
+  border: 10px solid yellow;
+  background-color: #FEF2BF;
+  box-shadow: 0 0 20px yellow;
+  transition: all 0.2s;
+}
+
+.red:active {
+  border: 10px solid red;
+  background-color: #FEF2BF;
+  box-shadow: 0 0 20px red;
+  transition: all 0.2s;
+}
+
+.blue:active {
+  border: 10px solid blue;
+  background-color: #FEF2BF;
+  box-shadow: 0 0 20px blue;
+  transition: all 0.2s;
+}
+
+.game-over { 
   background-color: red;
   opacity: 0.8;
 }
@@ -85,8 +110,8 @@ body {
 .audioSwitch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 66px;
+  height: 40px;
 }
 
 .audioSwitch input { 
@@ -102,7 +127,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: gray;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -110,11 +135,11 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 32px;
+  width: 32px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: lightgray;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -134,13 +159,12 @@ input:checked + .slider:before {
 }
 
 .material-symbols-sharp {
-  color: #ccc;
-  font-size: xx-large;
+  color: lightgray;
   font-variation-settings:
   'FILL' 1,
   'wght' 700,
   'GRAD' 0,
-  'opsz' 24
+  'opsz' 40
 }
 
 .audioControlls span:first-child{
