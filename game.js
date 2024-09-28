@@ -9,9 +9,9 @@ var audioIsOn = true;
 function nextSequence() {
     userClickedPattern = [];
     var randomNumber = Math.round(Math.random() * 3);
-    console.log(randomNumber);
+    //console.log(randomNumber);
     var randomChosenColour = buttonColours[randomNumber];
-    console.log(randomChosenColour);
+    //console.log(randomChosenColour);
     gamePattern.push(randomChosenColour);
     $("#"+randomChosenColour).fadeOut("fast").fadeIn("fast");
     if(audioIsOn){
