@@ -22,13 +22,13 @@ function nextSequence() {
     $("h1").text("Level " + level);
 }
 
-$(".btn").click(function(){
+$(".btn").on("mouseup", function(){
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
     //$(this).fadeOut("fast").fadeIn("fast");
     if(audioIsOn){
         var audio = new Audio("sounds/" + userChosenColour + ".mp3");
-    audio.play();
+        audio.play();
     }
     //animatePress($(this).attr("id"));
     checkAnswer(userClickedPattern.length-1);
